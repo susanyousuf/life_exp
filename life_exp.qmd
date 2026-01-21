@@ -11,4 +11,14 @@ library(gapminder)
 
 # Test Text 
 
+```{r}
+gapminder::gapminder_unfiltered  |> 
+  group_by(year) |>
+  filter(lifeExp == max(lifeExp)) |>
+  ungroup() |>
+  select(year, country, lifeExp) |>
+  arrange(year) ->
+  sumdat
+```
+
 
